@@ -1,0 +1,66 @@
+import sys
+import os
+import json
+
+from dotenv import load_dotenv
+load_dotenv()
+
+MONGO_DB_URL=os.getenv("MONGO_DB_URL")
+##print(MONGO_DB_URL)
+
+################################
+import certifi
+ca = certifi.where()
+import pandas as pd
+import numpy as np
+import pymongo
+from Network_Security.Exception.exception import NetworksecurityException
+from Network_Security.Logging.logger import logging
+
+
+class NetworkDataExtract:
+
+    def __init__(self):
+        try:
+            pass
+        except Exception as e:
+            raise NetworksecurityException(e, sys)
+
+    def csv_to_json_converter(self, file_path):
+        try:
+            data = pd.read_csv(file_path)
+            data.reset_index(drop=True, inplace=True)
+            return data.to_dict(orient="records")
+        except Exception as e:
+            raise NetworksecurityException(e, sys)
+
+    def insert_to_mongodb(self, records, database, collection):
+        try:
+            mongo_client = pymongo.MongoClient(
+                MONGO_DB_URL,
+                tlsCAFile=ca,
+            
+                serverSelectionTimeoutMS=30000
+            )
+
+            db = mongo_client[database]
+            collection = db[collection]
+            collection.insert_many(records)
+
+            return len(records)
+
+        except Exception as e:
+            raise NetworksecurityException(e, sys)
+
+if __name__ == "__main__":
+    FILE_PATH = r"Network_Data\phisingData.csv"
+    DATABASE = "APHIWE"
+    COLLECTION = "Network"
+
+    networkobj = NetworkDataExtract()
+    records = networkobj.csv_to_json_converter(file_path=FILE_PATH)
+
+    no_of_records = networkobj.insert_to_mongodb(
+        records, DATABASE, COLLECTION
+    )
+    print(no_of_records)

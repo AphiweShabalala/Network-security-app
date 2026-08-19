@@ -32,3 +32,27 @@ class NetworkDataExtract():
 
             except Exception as e:
                  raise NetworksecurityException(e,sys)
+    def insert_to_mongodb(self,records,database,collection):
+         try:
+              self.database=database
+              self.collection=collection
+              self.records=records
+
+              self.mongo_client=pymongo.MongoClient(MONGO_DB_URL)
+              self.database = self.mongo_client[self.database]
+
+              self.collection=self.database[self.collection]
+              self.collection.insert_many(self.records)
+              return(len(self.records))
+         except Exception as e:
+              raise NetworksecurityException(e,sys)
+
+if __name__=='__main__':
+    FILE_PATH="Network_Data\phisingData.csv"
+    DATABASE="APHIWE"
+    Collection="Network"
+    networkobj=NetworkDataExtract()
+    records=networkobj.csv_to_json_converter(file_path=FILE_PATH)
+ ##   print(records)
+    no_of_records=networkobj.insert_to_mongodb(records,DATABASE,Collection)
+    print(no_of_records)       
