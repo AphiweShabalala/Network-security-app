@@ -6,6 +6,9 @@ Author-email: Shabalalaaphiwe64@gmail.com
 Requires-Dist: python-dotenv
 Requires-Dist: numpy
 Requires-Dist: pandas
+Requires-Dist: pymongo
+Requires-Dist: pymongo[srv]==3.12
+Requires-Dist: certifi
 Dynamic: author
 Dynamic: author-email
 Dynamic: requires-dist
