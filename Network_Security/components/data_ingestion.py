@@ -29,20 +29,44 @@ class DataIngestion:
         """
         Read the data from momgodb
         """
-        try:
+        try: 
              database_name=self.data_ingestion_config.database_name
              collection_name=self.data_ingestion_config.collection_name
              self.mongo_client=pymongo.MongoClient(MONGO_DB_URL)
-             collection=self.mongo_client[database_name][collection_name]
+             print("MongoDB connection successful")
 
-             df=pd.DataFrame(List(collection.find()))
+
+             print(
+                      "Databases:",
+                     self.mongo_client.list_database_names()
+                )
+             print("Database:", database_name)
+
+             print(
+                    "Collections:",
+                        self.mongo_client[database_name].list_collection_names()
+             )
+
+             collection=self.mongo_client[database_name][collection_name]
+             print("Collection:", collection_name)
+
+             print(
+                 "Document count:",
+                      collection.count_documents({})
+             )
+
+             df = pd.DataFrame(list(collection.find()))
+
+             print("DataFrame shape:", df.shape)
+             print(df.head())
+
              if"_id" in df.columns.to_list():
-                 df=df.drop(columns=["_id"],axis=1)
+                 df=df.drop(columns=["_id"]) ##df = df.drop(columns-["_id"],axis=1) -> df = df.drop(columns=["_id"])
 
              df.replace({"na":np.nan},inplace=True)   
              return df
         except Exception as e:
-             raise NetworksecurityException
+             raise NetworksecurityException(e,sys)
         
     def export_data_into_feature_store(self,dataframe:pd.DataFrame):
         try:
@@ -50,7 +74,7 @@ class DataIngestion:
             ##creating folder
             dir_path = os.path.dirname(feature_store_file_path)
             os.makedirs(dir_path,exist_ok=True)
-            dataframe.to(feature_store_file_path,index=False,header=True)
+            dataframe.to_csv(feature_store_file_path,index=False,header=True)
             return dataframe
         except Exception as e:
             raise NetworksecurityException(e,sys)
@@ -76,21 +100,26 @@ class DataIngestion:
                 self.data_ingestion_config.train_file_path,index=False,header=True
             )
             test_set.to_csv(
-                            self.data_ingestion_config.train_file_path,index=False,header=True
+                            self.data_ingestion_config.test_file_path,index=False,header=True
                         )
             logging.info(f"Export train and test file path.")
 
         except Exception as e:
-            raise Exception(e,sys)
+            raise NetworksecurityException(e,sys)
     
         
     def initiate_data_ingestion(self):
         try:
             dataframe= self.export_collection_as_dataframe()
+            if dataframe.empty:
+                raise ValueError(
+                    "The DataFrame returned from MongoDB is empty. "
+                    "Check the MongoDB database and collection."
+                )
             dataframe=self.export_data_into_feature_store(dataframe)
             self.split_data_as_train_test(dataframe)
             dataingestionartifact= DataIngestionArtifact(train_file_path=self.data_ingestion_config.train_file_path,
                                                          test_file_path=self.data_ingestion_config.test_file_path)
             return dataingestionartifact
         except Exception as e:
-            raise NetworksecurityException
+            raise NetworksecurityException(e,sys)

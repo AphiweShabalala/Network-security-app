@@ -1,0 +1,21 @@
+[2026-08-22 12:30:56,813] 15 root - INFO - Initiate the data ingestion
+[2026-08-22 12:31:13,876] 87 root - INFO - Performed train test split on the dataframe
+[2026-08-22 12:31:13,878] 89 root - INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[2026-08-22 12:31:13,878] 97 root - INFO - Exporting train and test file path
+[2026-08-22 12:31:14,011] 105 root - INFO - Export train and test file path.
+[2026-08-22 12:31:14,013] 17 root - INFO - Data initiation completed
+[2026-08-22 12:31:14,045] 21 root - INFO - Initiate the data validation
+[2026-08-22 12:31:14,213] 30 root - INFO - Required number of columns:2
+[2026-08-22 12:31:14,213] 31 root - INFO - Data frame has columns:31
+[2026-08-22 12:56:56,960] 15 root - INFO - Initiate the data ingestion
+[2026-08-22 12:57:24,508] 87 root - INFO - Performed train test split on the dataframe
+[2026-08-22 12:57:24,508] 89 root - INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[2026-08-22 12:57:24,514] 97 root - INFO - Exporting train and test file path
+[2026-08-22 12:57:26,796] 105 root - INFO - Export train and test file path.
+[2026-08-22 12:57:26,800] 17 root - INFO - Data initiation completed
+[2026-08-22 12:57:27,454] 21 root - INFO - Initiate the data validation
+[2026-08-22 12:57:32,671] 36 root - INFO - Required number of columns: 31
+[2026-08-22 12:57:32,672] 40 root - INFO - Data frame has columns: 31
+[2026-08-22 12:57:32,673] 36 root - INFO - Required number of columns: 31
+[2026-08-22 12:57:32,674] 40 root - INFO - Data frame has columns: 31
+[2026-08-22 12:57:35,232] 23 root - INFO - data validation completed

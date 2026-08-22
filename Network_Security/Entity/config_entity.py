@@ -2,6 +2,7 @@ from datetime import datetime
 import os
 import sys
 from Network_Security.constants import training_pipeline
+from Network_Security.Exception.exception import NetworksecurityException
 
 print(training_pipeline.PIPELINE_NAME)
 print(training_pipeline.TARGET_COLUMN)
@@ -47,9 +48,9 @@ class DataValidationConfig:
          self.invalid_test_file_path:str=os.path.join(self.invalid_data_dir,training_pipeline.TEST_FILE_NAME)
          self.drift_report_file_path: str= os.path.join(
             self.data_validation_dir,
-            training_pipeline.DATA_VALIDATION_DRAFT_REPORT_DIR,
+            training_pipeline.DATA_VALIDATION_DRAFT_REPORT,  ##Bekuno _DIR
             training_pipeline.DATA_VALIDATION_DRIFT_REPORT_FILENAME
          )
 
       except Exception as e:
-         raise Exception(e,sys)
+         raise NetworksecurityException(e,sys)
