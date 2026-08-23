@@ -2,7 +2,7 @@ python-dotenv
 numpy
 pandas
 pymongo
-pymongo[srv]==3.12
+pymongo[srv]>=4.17,<5
 certifi
 scikit-learn
 dill

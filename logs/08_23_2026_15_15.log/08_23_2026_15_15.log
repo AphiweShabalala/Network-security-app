@@ -1,0 +1,59 @@
+[2026-08-23 15:01:12,867] 16 root - INFO - Initiate the data ingestion
+[2026-08-23 15:11:50,183] 16 root - INFO - Initiate the data ingestion
+[2026-08-23 15:18:59,246] 16 root - INFO - Initiate the data ingestion
+[2026-08-23 15:19:19,346] 92 root - INFO - Performed train test split on the dataframe
+[2026-08-23 15:19:19,346] 94 root - INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[2026-08-23 15:19:19,346] 102 root - INFO - Exporting train and test file path
+[2026-08-23 15:19:19,471] 110 root - INFO - Export train and test file path.
+[2026-08-23 15:19:19,471] 18 root - INFO - Data initiation completed
+[2026-08-23 15:19:19,513] 22 root - INFO - Initiate the data validation
+[2026-08-23 15:19:19,641] 36 root - INFO - Required number of columns: 31
+[2026-08-23 15:19:19,641] 40 root - INFO - Data frame has columns: 31
+[2026-08-23 15:19:19,641] 36 root - INFO - Required number of columns: 31
+[2026-08-23 15:19:19,641] 40 root - INFO - Data frame has columns: 31
+[2026-08-23 15:19:20,261] 24 root - INFO - data validation completed
+[2026-08-23 15:19:20,267] 29 root - INFO - data transformation started
+[2026-08-23 15:38:36,036] 40 root - INFO - Initiate the data ingestion
+[2026-08-23 15:39:20,957] 92 root - INFO - Performed train test split on the dataframe
+[2026-08-23 15:39:20,957] 94 root - INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[2026-08-23 15:39:20,959] 102 root - INFO - Exporting train and test file path
+[2026-08-23 15:39:21,077] 110 root - INFO - Export train and test file path.
+[2026-08-23 15:39:21,079] 46 root - INFO - Data ingestion completed
+[2026-08-23 15:39:21,082] 63 root - INFO - Initiate the data validation
+[2026-08-23 15:39:21,268] 36 root - INFO - Required number of columns: 31
+[2026-08-23 15:39:21,268] 40 root - INFO - Data frame has columns: 31
+[2026-08-23 15:39:21,268] 36 root - INFO - Required number of columns: 31
+[2026-08-23 15:39:21,268] 40 root - INFO - Data frame has columns: 31
+[2026-08-23 15:39:21,635] 69 root - INFO - Data validation completed
+[2026-08-23 15:39:21,637] 81 root - INFO - Data transformation started
+[2026-08-23 15:39:21,637] 78 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[2026-08-23 15:39:21,637] 85 root - INFO - Starting data transformation
+[2026-08-23 15:39:21,793] 99 root - INFO - Train dataframe shape: (8844, 31)
+[2026-08-23 15:39:21,793] 103 root - INFO - Test dataframe shape: (2211, 31)
+[2026-08-23 15:43:18,422] 40 root - INFO - Initiate the data ingestion
+[2026-08-23 15:43:32,017] 92 root - INFO - Performed train test split on the dataframe
+[2026-08-23 15:43:32,017] 94 root - INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[2026-08-23 15:43:32,017] 102 root - INFO - Exporting train and test file path
+[2026-08-23 15:43:32,126] 110 root - INFO - Export train and test file path.
+[2026-08-23 15:43:32,141] 46 root - INFO - Data ingestion completed
+[2026-08-23 15:43:32,143] 63 root - INFO - Initiate the data validation
+[2026-08-23 15:43:32,303] 36 root - INFO - Required number of columns: 31
+[2026-08-23 15:43:32,303] 40 root - INFO - Data frame has columns: 31
+[2026-08-23 15:43:32,303] 36 root - INFO - Required number of columns: 31
+[2026-08-23 15:43:32,303] 40 root - INFO - Data frame has columns: 31
+[2026-08-23 15:43:32,628] 69 root - INFO - Data validation completed
+[2026-08-23 15:43:32,636] 81 root - INFO - Data transformation started
+[2026-08-23 15:43:32,636] 78 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[2026-08-23 15:43:32,636] 85 root - INFO - Starting data transformation
+[2026-08-23 15:43:32,791] 99 root - INFO - Train dataframe shape: (8844, 31)
+[2026-08-23 15:43:32,791] 103 root - INFO - Test dataframe shape: (2211, 31)
+[2026-08-23 15:43:32,795] 50 root - INFO - Entered get_data_transformer_object method of DataTransformation class
+[2026-08-23 15:43:32,795] 60 root - INFO - Initialized KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[2026-08-23 15:43:32,795] 143 root - INFO - Fitting preprocessing object on training data
+[2026-08-23 15:43:32,885] 167 root - INFO - Successfully transformed training and testing features
+[2026-08-23 15:43:32,887] 185 root - INFO - Transformed train array shape: (8844, 31)
+[2026-08-23 15:43:32,887] 189 root - INFO - Transformed test array shape: (2211, 31)
+[2026-08-23 15:43:32,910] 46 root - INFO - Exited the save_object method of MainUtils class
+[2026-08-23 15:43:32,910] 216 root - INFO - Saved transformed train data, test data, and preprocessing object
+[2026-08-23 15:43:32,910] 242 root - INFO - Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='Artifacts\\08_23_2026_15_43_14\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_train_file_path='Artifacts\\08_23_2026_15_43_14\\data_transformation\\transformed\\train.npy', transformed_test_file_path='Artifacts\\08_23_2026_15_43_14\\data_transformation\\transformed\\test.npy')
+[2026-08-23 15:43:32,912] 92 root - INFO - Data transformation completed
