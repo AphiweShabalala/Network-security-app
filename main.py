@@ -7,12 +7,15 @@ from Network_Security.Logging.logger import logging
 from Network_Security.Entity.config_entity import (
     DataIngestionConfig,
     DataValidationConfig,
-    DataTransformationConfig
+    DataTransformationConfig,
+    ModelTrainerConfig
 )
 
 from Network_Security.Entity.config_entity import TrainingPipelineConfig
 
 import sys
+
+from Network_Security.components.model_trainer import ModelTrainer
 
 
 if __name__ == '__main__':
@@ -92,6 +95,16 @@ if __name__ == '__main__':
         logging.info("Data transformation completed")
 
         print(data_transformation_artifact)
+
+        #=====================================================
+        # Model training
+        #=====================================================
+        logging.info("Model Training Started")
+        model_trainer_config=ModelTrainerConfig(trainingpipelinecofig)
+        model_trainer=ModelTrainer(model_trainer_config=model_trainer_config,data_transformation_artfact=data_transformation_artifact)
+        model_trainer_artifact=model_trainer.initiate_model_trainer()
+
+        logging.info("Model Training artifact created")
 
     except Exception as e:
 

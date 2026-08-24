@@ -1,0 +1,59 @@
+[2026-08-24 11:19:59,696] 43 root - INFO - Initiate the data ingestion
+[2026-08-24 11:20:07,371] 92 root - INFO - Performed train test split on the dataframe
+[2026-08-24 11:20:07,371] 94 root - INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[2026-08-24 11:20:07,371] 102 root - INFO - Exporting train and test file path
+[2026-08-24 11:20:07,488] 110 root - INFO - Export train and test file path.
+[2026-08-24 11:20:07,488] 49 root - INFO - Data ingestion completed
+[2026-08-24 11:20:07,509] 66 root - INFO - Initiate the data validation
+[2026-08-24 11:20:07,644] 36 root - INFO - Required number of columns: 31
+[2026-08-24 11:20:07,644] 40 root - INFO - Data frame has columns: 31
+[2026-08-24 11:20:07,644] 36 root - INFO - Required number of columns: 31
+[2026-08-24 11:20:07,644] 40 root - INFO - Data frame has columns: 31
+[2026-08-24 11:20:08,018] 72 root - INFO - Data validation completed
+[2026-08-24 11:20:08,021] 84 root - INFO - Data transformation started
+[2026-08-24 11:20:08,021] 78 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[2026-08-24 11:20:08,027] 85 root - INFO - Starting data transformation
+[2026-08-24 11:20:08,216] 99 root - INFO - Train dataframe shape: (8844, 31)
+[2026-08-24 11:20:08,216] 103 root - INFO - Test dataframe shape: (2211, 31)
+[2026-08-24 11:20:08,220] 50 root - INFO - Entered get_data_transformer_object method of DataTransformation class
+[2026-08-24 11:20:08,220] 60 root - INFO - Initialized KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[2026-08-24 11:20:08,220] 143 root - INFO - Fitting preprocessing object on training data
+[2026-08-24 11:20:08,290] 167 root - INFO - Successfully transformed training and testing features
+[2026-08-24 11:20:08,290] 185 root - INFO - Transformed train array shape: (8844, 31)
+[2026-08-24 11:20:08,290] 189 root - INFO - Transformed test array shape: (2211, 31)
+[2026-08-24 11:20:08,355] 48 root - INFO - Exited the save_object method of MainUtils class
+[2026-08-24 11:20:08,355] 216 root - INFO - Saved transformed train data, test data, and preprocessing object
+[2026-08-24 11:20:08,355] 242 root - INFO - Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='Artifacts\\08_24_2026_11_19_55\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_train_file_path='Artifacts\\08_24_2026_11_19_55\\data_transformation\\transformed\\train.npy', transformed_test_file_path='Artifacts\\08_24_2026_11_19_55\\data_transformation\\transformed\\test.npy')
+[2026-08-24 11:20:08,355] 95 root - INFO - Data transformation completed
+[2026-08-24 11:20:08,361] 102 root - INFO - Model Training Started
+[2026-08-24 11:47:07,124] 43 root - INFO - Initiate the data ingestion
+[2026-08-24 11:47:14,747] 92 root - INFO - Performed train test split on the dataframe
+[2026-08-24 11:47:14,747] 94 root - INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[2026-08-24 11:47:14,747] 102 root - INFO - Exporting train and test file path
+[2026-08-24 11:47:14,854] 110 root - INFO - Export train and test file path.
+[2026-08-24 11:47:14,870] 49 root - INFO - Data ingestion completed
+[2026-08-24 11:47:14,886] 66 root - INFO - Initiate the data validation
+[2026-08-24 11:47:15,026] 36 root - INFO - Required number of columns: 31
+[2026-08-24 11:47:15,026] 40 root - INFO - Data frame has columns: 31
+[2026-08-24 11:47:15,026] 36 root - INFO - Required number of columns: 31
+[2026-08-24 11:47:15,026] 40 root - INFO - Data frame has columns: 31
+[2026-08-24 11:47:15,680] 72 root - INFO - Data validation completed
+[2026-08-24 11:47:15,696] 84 root - INFO - Data transformation started
+[2026-08-24 11:47:15,696] 78 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[2026-08-24 11:47:15,696] 85 root - INFO - Starting data transformation
+[2026-08-24 11:47:15,918] 99 root - INFO - Train dataframe shape: (8844, 31)
+[2026-08-24 11:47:15,918] 103 root - INFO - Test dataframe shape: (2211, 31)
+[2026-08-24 11:47:15,922] 50 root - INFO - Entered get_data_transformer_object method of DataTransformation class
+[2026-08-24 11:47:15,922] 60 root - INFO - Initialized KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[2026-08-24 11:47:15,922] 143 root - INFO - Fitting preprocessing object on training data
+[2026-08-24 11:47:15,992] 167 root - INFO - Successfully transformed training and testing features
+[2026-08-24 11:47:15,994] 185 root - INFO - Transformed train array shape: (8844, 31)
+[2026-08-24 11:47:15,994] 189 root - INFO - Transformed test array shape: (2211, 31)
+[2026-08-24 11:47:16,013] 48 root - INFO - Exited the save_object method of MainUtils class
+[2026-08-24 11:47:16,013] 216 root - INFO - Saved transformed train data, test data, and preprocessing object
+[2026-08-24 11:47:16,013] 242 root - INFO - Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='Artifacts\\08_24_2026_11_47_03\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_train_file_path='Artifacts\\08_24_2026_11_47_03\\data_transformation\\transformed\\train.npy', transformed_test_file_path='Artifacts\\08_24_2026_11_47_03\\data_transformation\\transformed\\test.npy')
+[2026-08-24 11:47:16,015] 95 root - INFO - Data transformation completed
+[2026-08-24 11:47:16,015] 102 root - INFO - Model Training Started
+[2026-08-24 11:49:49,717] 48 root - INFO - Exited the save_object method of MainUtils class
+[2026-08-24 11:49:49,717] 141 root - INFO - Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='Artifacts\\08_24_2026_11_47_03\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.9917505030181086, precision_score=0.9877755511022044, recall_score=0.9957575757575757), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.9711934156378601, precision_score=0.9648405560098119, recall_score=0.9776304888152444))
+[2026-08-24 11:49:49,719] 107 root - INFO - Model Training artifact created

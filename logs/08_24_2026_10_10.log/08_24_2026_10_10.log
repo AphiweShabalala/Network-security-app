@@ -1,0 +1,84 @@
+[2026-08-24 10:41:17,180] 43 root - INFO - Initiate the data ingestion
+[2026-08-24 10:41:25,511] 92 root - INFO - Performed train test split on the dataframe
+[2026-08-24 10:41:25,512] 94 root - INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[2026-08-24 10:41:25,513] 102 root - INFO - Exporting train and test file path
+[2026-08-24 10:41:25,636] 110 root - INFO - Export train and test file path.
+[2026-08-24 10:41:25,637] 49 root - INFO - Data ingestion completed
+[2026-08-24 10:41:25,681] 66 root - INFO - Initiate the data validation
+[2026-08-24 10:41:25,799] 36 root - INFO - Required number of columns: 31
+[2026-08-24 10:41:25,799] 40 root - INFO - Data frame has columns: 31
+[2026-08-24 10:41:25,799] 36 root - INFO - Required number of columns: 31
+[2026-08-24 10:41:25,799] 40 root - INFO - Data frame has columns: 31
+[2026-08-24 10:41:26,123] 72 root - INFO - Data validation completed
+[2026-08-24 10:41:26,125] 84 root - INFO - Data transformation started
+[2026-08-24 10:41:26,125] 78 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[2026-08-24 10:41:26,125] 85 root - INFO - Starting data transformation
+[2026-08-24 10:41:26,277] 99 root - INFO - Train dataframe shape: (8844, 31)
+[2026-08-24 10:41:26,277] 103 root - INFO - Test dataframe shape: (2211, 31)
+[2026-08-24 10:41:26,281] 50 root - INFO - Entered get_data_transformer_object method of DataTransformation class
+[2026-08-24 10:41:26,281] 60 root - INFO - Initialized KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[2026-08-24 10:41:26,281] 143 root - INFO - Fitting preprocessing object on training data
+[2026-08-24 10:41:26,357] 167 root - INFO - Successfully transformed training and testing features
+[2026-08-24 10:41:26,357] 185 root - INFO - Transformed train array shape: (8844, 31)
+[2026-08-24 10:41:26,359] 189 root - INFO - Transformed test array shape: (2211, 31)
+[2026-08-24 10:41:26,387] 48 root - INFO - Exited the save_object method of MainUtils class
+[2026-08-24 10:41:26,387] 216 root - INFO - Saved transformed train data, test data, and preprocessing object
+[2026-08-24 10:41:26,387] 242 root - INFO - Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='Artifacts\\08_24_2026_10_41_12\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_train_file_path='Artifacts\\08_24_2026_10_41_12\\data_transformation\\transformed\\train.npy', transformed_test_file_path='Artifacts\\08_24_2026_10_41_12\\data_transformation\\transformed\\test.npy')
+[2026-08-24 10:41:26,389] 95 root - INFO - Data transformation completed
+[2026-08-24 10:41:26,395] 102 root - INFO - Model Training Started
+[2026-08-24 10:43:12,512] 43 root - INFO - Initiate the data ingestion
+[2026-08-24 10:43:21,639] 92 root - INFO - Performed train test split on the dataframe
+[2026-08-24 10:43:21,639] 94 root - INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[2026-08-24 10:43:21,640] 102 root - INFO - Exporting train and test file path
+[2026-08-24 10:43:21,746] 110 root - INFO - Export train and test file path.
+[2026-08-24 10:43:21,762] 49 root - INFO - Data ingestion completed
+[2026-08-24 10:43:21,781] 66 root - INFO - Initiate the data validation
+[2026-08-24 10:43:21,912] 36 root - INFO - Required number of columns: 31
+[2026-08-24 10:43:21,912] 40 root - INFO - Data frame has columns: 31
+[2026-08-24 10:43:21,912] 36 root - INFO - Required number of columns: 31
+[2026-08-24 10:43:21,912] 40 root - INFO - Data frame has columns: 31
+[2026-08-24 10:43:22,197] 72 root - INFO - Data validation completed
+[2026-08-24 10:43:22,212] 84 root - INFO - Data transformation started
+[2026-08-24 10:43:22,212] 78 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[2026-08-24 10:43:22,212] 85 root - INFO - Starting data transformation
+[2026-08-24 10:43:22,355] 99 root - INFO - Train dataframe shape: (8844, 31)
+[2026-08-24 10:43:22,355] 103 root - INFO - Test dataframe shape: (2211, 31)
+[2026-08-24 10:43:22,359] 50 root - INFO - Entered get_data_transformer_object method of DataTransformation class
+[2026-08-24 10:43:22,359] 60 root - INFO - Initialized KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[2026-08-24 10:43:22,359] 143 root - INFO - Fitting preprocessing object on training data
+[2026-08-24 10:43:22,411] 167 root - INFO - Successfully transformed training and testing features
+[2026-08-24 10:43:22,411] 185 root - INFO - Transformed train array shape: (8844, 31)
+[2026-08-24 10:43:22,411] 189 root - INFO - Transformed test array shape: (2211, 31)
+[2026-08-24 10:43:22,436] 48 root - INFO - Exited the save_object method of MainUtils class
+[2026-08-24 10:43:22,436] 216 root - INFO - Saved transformed train data, test data, and preprocessing object
+[2026-08-24 10:43:22,436] 242 root - INFO - Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='Artifacts\\08_24_2026_10_43_08\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_train_file_path='Artifacts\\08_24_2026_10_43_08\\data_transformation\\transformed\\train.npy', transformed_test_file_path='Artifacts\\08_24_2026_10_43_08\\data_transformation\\transformed\\test.npy')
+[2026-08-24 10:43:22,440] 95 root - INFO - Data transformation completed
+[2026-08-24 10:43:22,440] 102 root - INFO - Model Training Started
+[2026-08-24 10:46:22,663] 43 root - INFO - Initiate the data ingestion
+[2026-08-24 10:47:08,514] 92 root - INFO - Performed train test split on the dataframe
+[2026-08-24 10:47:08,514] 94 root - INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[2026-08-24 10:47:08,515] 102 root - INFO - Exporting train and test file path
+[2026-08-24 10:47:08,638] 110 root - INFO - Export train and test file path.
+[2026-08-24 10:47:08,638] 49 root - INFO - Data ingestion completed
+[2026-08-24 10:47:08,659] 66 root - INFO - Initiate the data validation
+[2026-08-24 10:47:08,803] 36 root - INFO - Required number of columns: 31
+[2026-08-24 10:47:08,803] 40 root - INFO - Data frame has columns: 31
+[2026-08-24 10:47:08,803] 36 root - INFO - Required number of columns: 31
+[2026-08-24 10:47:08,803] 40 root - INFO - Data frame has columns: 31
+[2026-08-24 10:47:09,254] 72 root - INFO - Data validation completed
+[2026-08-24 10:47:09,256] 84 root - INFO - Data transformation started
+[2026-08-24 10:47:09,256] 78 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[2026-08-24 10:47:09,256] 85 root - INFO - Starting data transformation
+[2026-08-24 10:47:09,400] 99 root - INFO - Train dataframe shape: (8844, 31)
+[2026-08-24 10:47:09,400] 103 root - INFO - Test dataframe shape: (2211, 31)
+[2026-08-24 10:47:09,404] 50 root - INFO - Entered get_data_transformer_object method of DataTransformation class
+[2026-08-24 10:47:09,404] 60 root - INFO - Initialized KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[2026-08-24 10:47:09,404] 143 root - INFO - Fitting preprocessing object on training data
+[2026-08-24 10:47:09,471] 167 root - INFO - Successfully transformed training and testing features
+[2026-08-24 10:47:09,473] 185 root - INFO - Transformed train array shape: (8844, 31)
+[2026-08-24 10:47:09,473] 189 root - INFO - Transformed test array shape: (2211, 31)
+[2026-08-24 10:47:09,493] 48 root - INFO - Exited the save_object method of MainUtils class
+[2026-08-24 10:47:09,493] 216 root - INFO - Saved transformed train data, test data, and preprocessing object
+[2026-08-24 10:47:09,493] 242 root - INFO - Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='Artifacts\\08_24_2026_10_46_18\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_train_file_path='Artifacts\\08_24_2026_10_46_18\\data_transformation\\transformed\\train.npy', transformed_test_file_path='Artifacts\\08_24_2026_10_46_18\\data_transformation\\transformed\\test.npy')
+[2026-08-24 10:47:09,495] 95 root - INFO - Data transformation completed
+[2026-08-24 10:47:09,505] 102 root - INFO - Model Training Started
