@@ -1,0 +1,39 @@
+[2026-08-25 10:12:28,836] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2026-08-25 10:12:28,875] 107 dagshub - INFO - Accessing as shabalalaaphiwe64
+[2026-08-25 10:12:30,172] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/shabalalaaphiwe64/ML-Project "HTTP/1.1 200 OK"
+[2026-08-25 10:12:32,966] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2026-08-25 10:12:32,971] 107 dagshub - INFO - Initialized MLflow to track repo "shabalalaaphiwe64/ML-Project"
+[2026-08-25 10:12:32,973] 107 dagshub - INFO - Repository shabalalaaphiwe64/ML-Project initialized!
+[2026-08-25 10:12:32,979] 43 root - INFO - Initiate the data ingestion
+[2026-08-25 10:13:22,387] 92 root - INFO - Performed train test split on the dataframe
+[2026-08-25 10:13:22,387] 94 root - INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[2026-08-25 10:13:22,389] 102 root - INFO - Exporting train and test file path
+[2026-08-25 10:13:22,512] 110 root - INFO - Export train and test file path.
+[2026-08-25 10:13:22,513] 49 root - INFO - Data ingestion completed
+[2026-08-25 10:13:22,564] 66 root - INFO - Initiate the data validation
+[2026-08-25 10:13:22,693] 36 root - INFO - Required number of columns: 31
+[2026-08-25 10:13:22,693] 40 root - INFO - Data frame has columns: 31
+[2026-08-25 10:13:22,693] 36 root - INFO - Required number of columns: 31
+[2026-08-25 10:13:22,693] 40 root - INFO - Data frame has columns: 31
+[2026-08-25 10:13:22,997] 72 root - INFO - Data validation completed
+[2026-08-25 10:13:23,000] 84 root - INFO - Data transformation started
+[2026-08-25 10:13:23,000] 78 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[2026-08-25 10:13:23,000] 85 root - INFO - Starting data transformation
+[2026-08-25 10:13:23,107] 99 root - INFO - Train dataframe shape: (8844, 31)
+[2026-08-25 10:13:23,108] 103 root - INFO - Test dataframe shape: (2211, 31)
+[2026-08-25 10:13:23,111] 50 root - INFO - Entered get_data_transformer_object method of DataTransformation class
+[2026-08-25 10:13:23,111] 60 root - INFO - Initialized KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[2026-08-25 10:13:23,111] 143 root - INFO - Fitting preprocessing object on training data
+[2026-08-25 10:13:23,187] 167 root - INFO - Successfully transformed training and testing features
+[2026-08-25 10:13:23,188] 185 root - INFO - Transformed train array shape: (8844, 31)
+[2026-08-25 10:13:23,188] 189 root - INFO - Transformed test array shape: (2211, 31)
+[2026-08-25 10:13:23,203] 48 root - INFO - Exited the save_object method of MainUtils class
+[2026-08-25 10:13:23,203] 216 root - INFO - Saved transformed train data, test data, and preprocessing object
+[2026-08-25 10:13:23,208] 48 root - INFO - Exited the save_object method of MainUtils class
+[2026-08-25 10:13:23,208] 243 root - INFO - Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='Artifacts\\08_25_2026_10_11_45\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_train_file_path='Artifacts\\08_25_2026_10_11_45\\data_transformation\\transformed\\train.npy', transformed_test_file_path='Artifacts\\08_25_2026_10_11_45\\data_transformation\\transformed\\test.npy')
+[2026-08-25 10:13:23,209] 95 root - INFO - Data transformation completed
+[2026-08-25 10:13:23,211] 102 root - INFO - Model Training Started
+[2026-08-25 10:27:44,410] 48 root - INFO - Exited the save_object method of MainUtils class
+[2026-08-25 10:27:44,511] 48 root - INFO - Exited the save_object method of MainUtils class
+[2026-08-25 10:27:44,511] 159 root - INFO - Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='Artifacts\\08_25_2026_10_11_45\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.9908607010143617, precision_score=0.989568706118355, recall_score=0.9921560740144811), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.9785263157894737, precision_score=0.9764705882352941, recall_score=0.980590717299578))
+[2026-08-25 10:27:44,517] 107 root - INFO - Model Training artifact created

@@ -27,7 +27,7 @@ from sklearn.ensemble import (
 import mlflow
 
 import dagshub
-dagshub.init(repo_owner='shabalalaaphiwe64', repo_name='ML-Project', mlflow=True)
+#dagshub.init(repo_owner='shabalalaaphiwe64', repo_name='ML-Project', mlflow=True)
 
 
 
@@ -57,8 +57,13 @@ class ModelTrainer:
 
 
     def train_model(self, x_train, y_train, x_test, y_test):
-
-     models = {
+         dagshub.init(
+            repo_owner='shabalalaaphiwe64',
+            repo_name='ML-Project',
+            mlflow=True
+        )
+       
+         models = {
         "Random Forest": RandomForestClassifier(verbose=1),
         "Decision Tree": DecisionTreeClassifier(),
         "Gradient Boosting": GradientBoostingClassifier(verbose=1),
@@ -66,7 +71,7 @@ class ModelTrainer:
         "AdaBoost": AdaBoostClassifier(),
      }
 
-     params = {
+         params = {
         "Decision Tree": {
             "criterion": ["gini", "entropy", "log_loss"],
         },
@@ -88,7 +93,7 @@ class ModelTrainer:
         }
     }
 
-     model_report = evaluate_models(
+         model_report = evaluate_models(
         x_train=x_train,
         y_train=y_train,
         x_test=x_test,
@@ -97,70 +102,70 @@ class ModelTrainer:
         param=params
     )
 
-     best_model_score = max(sorted(model_report.values()))
+         best_model_score = max(sorted(model_report.values()))
 
-     best_model_name = list(model_report.keys())[
+         best_model_name = list(model_report.keys())[
         list(model_report.values()).index(best_model_score)
     ]
 
-     best_model = models[best_model_name]
+         best_model = models[best_model_name]
 
     # Training predictions
-     y_train_pred = best_model.predict(x_train)
+         y_train_pred = best_model.predict(x_train)
 
-     classification_train_metric = get_classification_score(
+         classification_train_metric = get_classification_score(
         y_true=y_train,
         y_pred=y_train_pred
     )
 
      ##Track the experimants with mlflow
-     self.track_mlflow(best_model,classification_train_metric)
+         self.track_mlflow(best_model,classification_train_metric)
 
     # Testing predictions
-     y_test_pred = best_model.predict(x_test)
+         y_test_pred = best_model.predict(x_test)
 
-     classification_test_metric = get_classification_score(
+         classification_test_metric = get_classification_score(
         y_true=y_test,
         y_pred=y_test_pred
     )
-     self.track_mlflow(best_model,classification_test_metric)
+         self.track_mlflow(best_model,classification_test_metric)
     
     # Load preprocessing object
-     preprocessor = load_object(
+         preprocessor = load_object(
         file_path=self.data_transformation_artifact.transformed_object_file_path
     )
 
     # Create model directory
-     model_dir_path = os.path.dirname(
+         model_dir_path = os.path.dirname(
         self.model_trainer_config.trained_model_file_path
     )
 
-     os.makedirs(model_dir_path, exist_ok=True)
+         os.makedirs(model_dir_path, exist_ok=True)
 
     # Create final model
-     network_model = NetworkModel(
+         network_model = NetworkModel(
         preprocessor=preprocessor,
         model=best_model
     )
 
     # Save final model
-     save_object(
+         save_object(
         self.model_trainer_config.trained_model_file_path,
         obj=network_model
     )
-
+         save_object("final_model/model.pkl",best_model)
     # Create artifact
-     model_trainer_artifact = ModelTrainerArtifact(
+         model_trainer_artifact = ModelTrainerArtifact(
         trained_model_file_path=self.model_trainer_config.trained_model_file_path,
         train_metric_artifact=classification_train_metric,
         test_metric_artifact=classification_test_metric
     )
 
-     logging.info(
+         logging.info(
         f"Model trainer artifact: {model_trainer_artifact}"
     )
 
-     return model_trainer_artifact
+         return model_trainer_artifact
 
     
         

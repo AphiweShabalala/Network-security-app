@@ -1,0 +1,8 @@
+[2026-08-25 12:22:19,311] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2026-08-25 12:22:19,335] 107 dagshub - INFO - Accessing as shabalalaaphiwe64
+[2026-08-25 12:45:28,749] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2026-08-25 12:45:28,829] 107 dagshub - INFO - Accessing as shabalalaaphiwe64
+[2026-08-25 12:45:30,227] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/shabalalaaphiwe64/ML-Project "HTTP/1.1 200 OK"
+[2026-08-25 12:45:31,342] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2026-08-25 12:45:31,415] 107 dagshub - INFO - Initialized MLflow to track repo "shabalalaaphiwe64/ML-Project"
+[2026-08-25 12:45:31,649] 107 dagshub - INFO - Repository shabalalaaphiwe64/ML-Project initialized!
