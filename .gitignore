@@ -1,2 +1,12 @@
-venv
 .env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+Artifacts/
+logs/
+mlruns/
+mlflow.db
+prediction_output/
+final_model/

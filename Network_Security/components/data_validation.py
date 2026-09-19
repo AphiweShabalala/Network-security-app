@@ -123,24 +123,26 @@ class DataValidation:
 
             ##Checking datadrift
             status=self.detect_dataset_drifts(base_df=train_dataframe,current_df=test_dataframe)
-            dir_path=os.path.dirname(self.data_validation_config.valid_train_file_path)
-            os.makedirs(dir_path,exist_ok=True)
+            if status:
+                dir_path=os.path.dirname(self.data_validation_config.valid_train_file_path)
+                os.makedirs(dir_path,exist_ok=True)
+                train_path = self.data_validation_config.valid_train_file_path
+                test_path = self.data_validation_config.valid_test_file_path
+            else:
+                dir_path=os.path.dirname(self.data_validation_config.invalid_train_file_path)
+                os.makedirs(dir_path,exist_ok=True)
+                train_path = self.data_validation_config.invalid_train_file_path
+                test_path = self.data_validation_config.invalid_test_file_path
 
-            train_dataframe.to_csv(
-                 self.data_validation_config.valid_train_file_path, index=False, header=True
-            )   
-
-            
-            test_dataframe.to_csv(
-                 self.data_validation_config.valid_test_file_path, index=False, header=True
-            )   
+            train_dataframe.to_csv(train_path, index=False, header=True)
+            test_dataframe.to_csv(test_path, index=False, header=True)
 
             data_validation_artifact = DataValidationArtifact(
                 validation_status= status,
-                valid_train_file_path=self.data_validation_config.valid_train_file_path, ## self.data...->  valid_train_file_path=self.data_validation_config.valid_train_file_path
-                valid_test_file_path= self.data_validation_config.valid_test_file_path, ##self.dat...-> valid_test_file_path=self.data_validation_config.valid_test_file_path
-                invalid_test_file_path=None,
-                invalid_train_file_path=None,
+                valid_train_file_path=self.data_validation_config.valid_train_file_path if status else None,
+                valid_test_file_path=self.data_validation_config.valid_test_file_path if status else None,
+                invalid_test_file_path=self.data_validation_config.invalid_test_file_path if not status else None,
+                invalid_train_file_path=self.data_validation_config.invalid_train_file_path if not status else None,
                 drift_report_file_path= self.data_validation_config.drift_report_file_path,
             )
             return data_validation_artifact
@@ -148,4 +150,3 @@ class DataValidation:
         except Exception as e:
             raise NetworksecurityException(e,sys)
 
-    

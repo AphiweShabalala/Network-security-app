@@ -1,4 +1,4 @@
-from sklearn.metrics import r2_score
+from sklearn.metrics import f1_score
 from sklearn.model_selection import GridSearchCV
 import yaml
 from Network_Security.Exception.exception import NetworksecurityException
@@ -97,14 +97,16 @@ def evaluate_models(x_train, y_train, x_test, y_test, models, param):
             y_train_pred = model.predict(x_train)
             y_test_pred = model.predict(x_test)
 
-            train_model_score = r2_score(
+            train_model_score = f1_score(
                 y_train,
-                y_train_pred
+                y_train_pred,
+                zero_division=0
             )
 
-            test_model_score = r2_score(
+            test_model_score = f1_score(
                 y_test,
-                y_test_pred
+                y_test_pred,
+                zero_division=0
             )
 
             report[model_name] = test_model_score

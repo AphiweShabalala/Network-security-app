@@ -1,14 +1,14 @@
-python-dotenv
-numpy
-pandas
-pymongo
-pymongo[srv]>=4.17,<5
 certifi
-scikit-learn
-dill
-pyaml
-mlflow
 dagshub
 fastapi
+jinja2
+mlflow
+numpy
+pandas
+pymongo[srv]>=4.17,<5
+python-dotenv
+python-multipart
+PyYAML
+scikit-learn
+scipy
 uvicorn
-##-e .
